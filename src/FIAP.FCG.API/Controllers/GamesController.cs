@@ -1,5 +1,5 @@
-﻿using FIAP.FCG.Domain.Entity.Game.Input;
-using FIAP.FCG.Domain.Services.Interfaces;
+﻿using FIAP.FCG.Service.Dto.Game;
+using FIAP.FCG.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,14 +7,13 @@ namespace FIAP.FCG.API.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class GamesController(IBaseLogger<GamesController> logger, IGameService service) : ControllerBase
+    public class GamesController(IGameService service) : ControllerBase
     {
-        private readonly IBaseLogger<GamesController> _logger = logger;
         private readonly IGameService _service = service;
 
         [HttpPost]
         [Authorize(Policy = "Admin")]
-        public IActionResult Post([FromBody] CreateGameInput input)
+        public IActionResult Post([FromBody] GameCreateDto input)
         {
             _service.Create(input);
             return Ok();
@@ -22,7 +21,7 @@ namespace FIAP.FCG.API.Controllers
 
         [HttpPut]
         [Authorize(Policy = "Admin")]
-        public IActionResult Put([FromBody] UpdateGameInput input)
+        public IActionResult Put([FromBody] GameUpdateDto input)
         {
             _service.Update(input);
             return Ok();

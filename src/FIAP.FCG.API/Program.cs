@@ -1,5 +1,4 @@
 using FIAP.FCG.API.Extensions;
-using FIAP.FCG.API.Middleware;
 using FIAP.FCG.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +8,6 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -51,11 +49,10 @@ if (app.Environment.IsDevelopment())
 #region -- Middleware
 
 app.UseCorrelationMiddleware();
+app.UseLogMiddleware();
+app.UseGlobalExceptionHandler();
 
 #endregion
-
-
-app.UseLogMiddleware();
 
 app.UseAuthentication();
 app.UseAuthorization();

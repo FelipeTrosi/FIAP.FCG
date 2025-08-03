@@ -1,32 +1,15 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
+﻿namespace FIAP.FCG.API.Middleware;
 
-namespace FIAP.FCG.API.Middleware
+public class LogMiddleware
 {
-    // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
-    public class LogMiddleware
+    private readonly RequestDelegate _next;
+
+    public LogMiddleware(RequestDelegate next)
     {
-        private readonly RequestDelegate _next;
-
-        public LogMiddleware(RequestDelegate next)
-        {
-            _next = next;
-        }
-
-        public Task Invoke(HttpContext httpContext)
-        {
-
-            return _next(httpContext);
-        }
+        _next = next;
     }
 
-    // Extension method used to add the middleware to the HTTP request pipeline.
-    public static class LogMiddlewareExtensions
-    {
-        public static IApplicationBuilder UseLogMiddleware(this IApplicationBuilder builder)
-        {
-            return builder.UseMiddleware<LogMiddleware>();
-        }
-    }
+    public Task Invoke(HttpContext httpContext) 
+        => _next(httpContext);
 }
+

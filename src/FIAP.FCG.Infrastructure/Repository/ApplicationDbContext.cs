@@ -11,7 +11,7 @@ namespace FIAP.FCG.Infrastructure.Repository
 
         public ApplicationDbContext()
         {
-            IConfiguration cfg =   new ConfigurationBuilder()
+            IConfiguration cfg = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json")
                 .Build();

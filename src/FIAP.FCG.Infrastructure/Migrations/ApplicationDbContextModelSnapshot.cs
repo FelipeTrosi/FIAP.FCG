@@ -83,6 +83,17 @@ namespace FIAP.FCG.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            AccessLevel = 1,
+                            CreatedAt = new DateTime(2025, 8, 2, 16, 21, 46, 24, DateTimeKind.Local).AddTicks(5299),
+                            Email = "admin@fiap.com.br",
+                            Name = "Admin",
+                            Password = "4Dm1n@Fiap"
+                        });
                 });
 #pragma warning restore 612, 618
         }

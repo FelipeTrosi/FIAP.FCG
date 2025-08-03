@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\Game\Output\" />
     <Folder Include="Entity\User\Output\" />
   </ItemGroup>
 

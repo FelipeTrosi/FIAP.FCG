@@ -1,5 +1,5 @@
-﻿using FIAP.FCG.Domain.Repository.Interfaces;
-using FIAP.FCG.Infrastructure.Repository;
+﻿using FIAP.FCG.Infrastructure.Repository;
+using FIAP.FCG.Infrastructure.Repository.Interfaces;
 
 namespace FIAP.FCG.API.Extensions
 {

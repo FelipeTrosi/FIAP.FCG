@@ -1,5 +1,5 @@
-﻿using FIAP.FCG.Domain.Repository.Interfaces;
-using FIAP.FCG.Domain.Entity;
+﻿using FIAP.FCG.Domain.Entity;
+using FIAP.FCG.Infrastructure.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace FIAP.FCG.Infrastructure.Repository

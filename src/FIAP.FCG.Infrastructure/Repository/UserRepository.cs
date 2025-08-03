@@ -1,5 +1,5 @@
-﻿using FIAP.FCG.Domain.Repository.Interfaces;
-using FIAP.FCG.Domain.Entity;
+﻿using FIAP.FCG.Domain.Entity;
+using FIAP.FCG.Infrastructure.Repository.Interfaces;
 
 namespace FIAP.FCG.Infrastructure.Repository
 {
@@ -8,5 +8,9 @@ namespace FIAP.FCG.Infrastructure.Repository
         public UserRepository(ApplicationDbContext context) : base(context)
         {
         }
+
+        public UserEntity? GetByUserAndPassword(string user, string password)
+            => _context.User.FirstOrDefault(q => q.Name == user && q.Password == password);
+
     }
 }

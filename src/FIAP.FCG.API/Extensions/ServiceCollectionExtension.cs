@@ -1,15 +1,13 @@
-﻿using FIAP.FCG.Domain.Services.Interfaces;
-using FIAP.FCG.Infrastructure.CorrelationId;
+﻿using FIAP.FCG.Infrastructure.CorrelationId;
 
-namespace FIAP.FCG.API.Extensions
+namespace FIAP.FCG.API.Extensions;
+
+public static class ServiceCollectionExtension
 {
-    public static class ServiceCollectionExtension
+    public static IServiceCollection AddCorrelationIdGenerator(this IServiceCollection services)
     {
-        public static IServiceCollection AddCorrelationIdGenerator(this IServiceCollection services)
-        {
-            services.AddTransient<ICorrelationIdGenerator, CorrelationIdGenerator>();
+        services.AddTransient<ICorrelationIdGenerator, CorrelationIdGenerator>();
 
-            return services;
-        }
+        return services;
     }
 }

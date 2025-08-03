@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FIAP.FCG.Domain\FIAP.FCG.Domain.csproj" />
     <ProjectReference Include="..\FIAP.FCG.Infrastructure\FIAP.FCG.Infrastructure.csproj" />
     <ProjectReference Include="..\FIAP.FCG.Service\FIAP.FCG.Service.csproj" />
