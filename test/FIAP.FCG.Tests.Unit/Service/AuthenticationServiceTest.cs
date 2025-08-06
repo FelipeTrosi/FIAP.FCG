@@ -10,7 +10,7 @@ namespace FIAP.FCG.Tests.Unit.Service;
 [TestFixture]
 public class AuthenticationServiceTest
 {
-    private readonly Mock<IAuthService> _authServiceMock = new Mock<IAuthService>();
+    private readonly Mock<IAuthService> _authServiceMock = new ();
 
     [SetUp]
     public void SetUp()

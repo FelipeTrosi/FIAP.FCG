@@ -136,13 +136,13 @@ namespace FIAP.FCG.Tests.BDD.Features
             {
                 await this.ScenarioStartAsync();
 #line 14
-    await testRunner.GivenAsync("que informei o nome \"João\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.GivenAsync("que informei o nome \"Asdruball\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 15
-    await testRunner.AndAsync("informei o email \"joao-email.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+    await testRunner.AndAsync("informei o email \"asdruball-email.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 16
-    await testRunner.AndAsync("informei a senha \"Joao@1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+    await testRunner.AndAsync("informei a senha \"asdruball@1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 17
     await testRunner.WhenAsync("eu tento me cadastrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -172,10 +172,10 @@ namespace FIAP.FCG.Tests.BDD.Features
             {
                 await this.ScenarioStartAsync();
 #line 21
-    await testRunner.GivenAsync("que informei o nome \"Maria\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+    await testRunner.GivenAsync("que informei o nome \"Mirosvaldo\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 22
-    await testRunner.AndAsync("informei o email \"maria@teste.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+    await testRunner.AndAsync("informei o email \"miros_valdo@teste.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 23
     await testRunner.AndAsync("informei a senha \"123456\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");

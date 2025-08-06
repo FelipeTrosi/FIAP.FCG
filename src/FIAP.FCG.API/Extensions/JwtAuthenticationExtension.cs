@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace FIAP.FCG.API.Extensions
 {
@@ -32,9 +33,7 @@ namespace FIAP.FCG.API.Extensions
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
-            });
-
-            services.AddControllers();
+            });           
 
             return services;
         }
