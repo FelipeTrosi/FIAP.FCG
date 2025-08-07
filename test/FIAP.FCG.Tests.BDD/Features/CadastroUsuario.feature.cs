@@ -28,8 +28,7 @@ namespace FIAP.FCG.Tests.BDD.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Cadastro de Usuários", "  Como um novo usuário\r\n  Quero me cadastrar no sistema\r\n  Para poder acessar fun" +
-                "cionalidades restritas", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Cadastro de Usuários", null, global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
 #line 1 "CadastroUsuario.feature"
 #line hidden
@@ -89,7 +88,7 @@ namespace FIAP.FCG.Tests.BDD.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Cadastro realizado com sucesso", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+#line 3
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -99,19 +98,19 @@ namespace FIAP.FCG.Tests.BDD.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 7
+#line 4
     await testRunner.GivenAsync("que informei o nome \"Felipe Trosi\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 5
     await testRunner.AndAsync("informei o email \"felipe@fiap.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 9
+#line 6
     await testRunner.AndAsync("informei a senha \"F3lipe@123\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 7
     await testRunner.WhenAsync("eu tento me cadastrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 8
     await testRunner.ThenAsync("o sistema deve retornar sucesso", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -125,7 +124,7 @@ namespace FIAP.FCG.Tests.BDD.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Cadastro com email inválido", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 13
+#line 10
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -135,19 +134,19 @@ namespace FIAP.FCG.Tests.BDD.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 14
+#line 11
     await testRunner.GivenAsync("que informei o nome \"Asdruball\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 15
+#line 12
     await testRunner.AndAsync("informei o email \"asdruball-email.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 13
     await testRunner.AndAsync("informei a senha \"asdruball@1234\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 14
     await testRunner.WhenAsync("eu tento me cadastrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 15
     await testRunner.ThenAsync("o sistema deve retornar erro \"Email inválido\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -161,7 +160,7 @@ namespace FIAP.FCG.Tests.BDD.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Cadastro com senha fraca", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 20
+#line 17
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -171,19 +170,19 @@ namespace FIAP.FCG.Tests.BDD.Features
             else
             {
                 await this.ScenarioStartAsync();
-#line 21
+#line 18
     await testRunner.GivenAsync("que informei o nome \"Mirosvaldo\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 22
+#line 19
     await testRunner.AndAsync("informei o email \"miros_valdo@teste.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 23
+#line 20
     await testRunner.AndAsync("informei a senha \"123456\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 21
     await testRunner.WhenAsync("eu tento me cadastrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 22
     await testRunner.ThenAsync("o sistema deve retornar erro \"Senha inválida\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }

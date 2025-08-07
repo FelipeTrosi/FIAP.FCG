@@ -72,14 +72,6 @@ public class GameService(IBaseLogger<GameService> logger, IGameRepository reposi
     {
         _logger.LogInformation($"Iniciando serviço 'UPDATE' de jogo com Id {entity.Id}!");
 
-        var register = _repository.GetById(entity.Id);
-
-        if (register == null)
-        {
-            _logger.LogWarning($"Registro não encontrado para o id: {entity.Id}");
-            throw new NotFoundException($"Registro não encontrado para o id: {entity.Id}");
-        }
-
         _repository.Update(new()
         {
             Id = entity.Id,
