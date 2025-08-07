@@ -50,6 +50,14 @@ public class UserService(IBaseLogger<UserService> logger, IUserRepository reposi
     {
         _logger.LogInformation($"Iniciando serviço 'DELETE' por Id: {id} de usuário !");
 
+        var entity = _repository.GetById(id);
+
+        if (entity == null)
+        {
+            _logger.LogWarning($"Registro não encontrado para o id: {id}");
+            throw new NotFoundException($"Registro não encontrado para o id: {id}");
+        }
+
         _repository.DeleteById(id);
 
         _logger.LogInformation($"Usuário com id {id} removido com sucesso !");
@@ -73,7 +81,7 @@ public class UserService(IBaseLogger<UserService> logger, IUserRepository reposi
         else
         {
             _logger.LogWarning($"Usuário com Id: {id} não encontrado !");
-            return null;
+            throw new NotFoundException($"Registro não encontrado para o id: {id}"); ;
         }
     }
 
