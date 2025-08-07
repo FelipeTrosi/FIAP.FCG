@@ -1,7 +1,4 @@
 ﻿Feature: Cadastro de Usuários
-  Como um novo usuário
-  Quero me cadastrar no sistema
-  Para poder acessar funcionalidades restritas
 
   Scenario: Cadastro realizado com sucesso
     Given que informei o nome "Felipe Trosi"
