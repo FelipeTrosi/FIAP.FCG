@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+ 
+jobs:
+  test_job:
+    name: Executando Job teste
+    runs-on: self-hosted
+    steps:
+    - name: Build
+      uses: actions/checkout@v4
+
+      
+
+      
