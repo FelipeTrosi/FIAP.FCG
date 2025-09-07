@@ -7,7 +7,7 @@ on:
 jobs:
   test_job:
     name: Executando Job teste
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
     - name: Step 1 (Build)
       uses: actions/checkout@v4
