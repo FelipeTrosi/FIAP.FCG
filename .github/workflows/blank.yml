@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+ 
+jobs:
+  test_job:
+    name: Executando Job teste
+    runs-on: self-hosted
+    steps:
+    - name: Build
+      uses: actions/checkout@v4
+    
+    - name: Docker Login
+      uses: docker/login-action@v3.5.0
+      with:
+        username: 'ftrosi010800'
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      
+
+      
