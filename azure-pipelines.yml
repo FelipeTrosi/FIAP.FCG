@@ -14,22 +14,24 @@ variables:
   BuildConfiguration: 'Release'
 
 pool:
-  vmImage: 'SelfHostedPool'
+  name: 'SelfHostedPool'
 
 stages:
 - stage: build
   displayName: Build e Publish Artifact
   jobs:
-
   - job: build
     displayName: 'Build Job'
     steps:
+    - checkout: self
+      clean: true
 
     - task: UseDotNet@2
       displayName: 'Use .NET SDK 8.x'
       inputs:
         packageType: 'sdk'
         version: '8.x'
+        includePreviewVersions: false
 
     - task: DotNetCoreCLI@2
       displayName: 'Restore'
@@ -53,5 +55,3 @@ stages:
 
     - publish: $(Build.ArtifactStagingDirectory)
       artifact: drop
-      
-
