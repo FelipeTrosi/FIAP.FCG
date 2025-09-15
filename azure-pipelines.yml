@@ -1,14 +1,7 @@
 name: 'Build Project'
 
-trigger:
-  branches:
-    include:
-      - master
-
 pr:
-  branches:
-    include:
-      - master
+  - master
 
 variables:
   BuildConfiguration: 'Release'
