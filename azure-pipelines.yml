@@ -1,7 +1,7 @@
 name: 'CI'
 
 pr:
-  - master
+  - '*'
 
 variables:
   BuildConfiguration: 'Release'
