@@ -1,27 +1,27 @@
-name: CI
+# name: CI
 
-on:
-  push:
-    branches: [ "master" ]
+# on:
+  # push:
+    # branches: [ "master" ]
  
-jobs:
-  test_job:
-    name: Executando Job teste
-    runs-on: ubuntu-latest
-    steps:
-    - name: Step 1 (Build)
-      uses: actions/checkout@v4
+# jobs:
+  # test_job:
+    # name: Executando Job teste
+    # runs-on: ubuntu-latest
+    # steps:
+    # - name: Step 1 (Build)
+      # uses: actions/checkout@v4
     
-    - name: Step 2 (Docker Login)
-      uses: docker/login-action@v3.5.0
-      with:
-        username: 'ftrosi010800'
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    # - name: Step 2 (Docker Login)
+      # uses: docker/login-action@v3.5.0
+      # with:
+        # username: 'ftrosi010800'
+        # password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build and push Docker images
-      uses: docker/build-push-action@v6.18.0
-      with:
-        context: ./src
-        file: ./src/FIAP.FCG.API/Dockerfile
-        tags: 'ftrosi010800/fiap-fcg:latest'
-        push: true
+    # - name: Build and push Docker images
+      # uses: docker/build-push-action@v6.18.0
+      # with:
+        # context: ./src
+        # file: ./src/FIAP.FCG.API/Dockerfile
+        # tags: 'ftrosi010800/fiap-fcg:latest'
+        # push: true
