@@ -34,7 +34,7 @@ POST /Auth/Login
   "password": "4Dm1n@Fiap"
 }
 ```
-Esse usuário possível nível de acesso Admin para CRUD de usuários e jogos
+Esse usuário possuí nível de acesso 'Admin' para relializar o CRUD de usuários e jogos
 
 ---
 
