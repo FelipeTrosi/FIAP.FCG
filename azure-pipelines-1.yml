@@ -1,0 +1,58 @@
+name: 'CD'
+
+trigger:
+  - master
+
+variables:
+  BuildConfiguration: 'Release'
+
+pool:
+  name: 'SelfHostedPool'
+
+stages:
+- stage: build
+  displayName: Build e Publish Artifact
+  jobs:
+  - job: build
+    displayName: 'Build Job'
+    steps:
+    - checkout: self
+      clean: true
+
+    - task: UseDotNet@2
+      displayName: 'Use .NET SDK 8.x'
+      inputs:
+        packageType: 'sdk'
+        version: '8.x'
+        includePreviewVersions: false
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Restore'
+      inputs:
+        command: 'restore'
+        projects: 'src/FIAP.FCG.API/FIAP.FCG.API.csproj' 
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Build'
+      inputs:
+        command: 'build'
+        projects: 'src/FIAP.FCG.API/FIAP.FCG.API.csproj'
+        arguments: '-c $(BuildConfiguration) --no-restore'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Publish'
+      inputs:
+        command: 'publish'
+        projects: 'src/FIAP.FCG.API/FIAP.FCG.API.csproj'
+        arguments: '-c $(BuildConfiguration) -o "$(Build.ArtifactStagingDirectory)/$(BuildConfiguration)" --no-build'
+
+
+    - publish: $(Build.ArtifactStagingDirectory)
+      artifact: drop
+
+    - download: current
+      artifact: drop
+
+    - script: |
+        echo Deploy realizado com sucesso
+      displayName: 'Deploy Servidor'
