@@ -51,7 +51,8 @@ stages:
       inputs:
         command: 'publish'
         projects: 'src/FIAP.FCG.API/FIAP.FCG.API.csproj'
-        arguments: '-c $(BuildConfiguration) -o $(Build.ArtifactStagingDirectory)/$(BuildConfiguration) --no-build'
+        arguments: '-c $(BuildConfiguration) -o "$(Build.ArtifactStagingDirectory)/$(BuildConfiguration)" --no-build'
+
 
     - publish: $(Build.ArtifactStagingDirectory)
       artifact: drop
