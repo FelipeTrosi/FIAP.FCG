@@ -14,7 +14,7 @@ variables:
   BuildConfiguration: 'Release'
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'SelfHostedPool'
 
 stages:
 - stage: build
