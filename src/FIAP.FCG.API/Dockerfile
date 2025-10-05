@@ -1,7 +1,7 @@
 # Etapa base: imagem de runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 5001
+EXPOSE 3000
 ENV ASPNETCORE_HTTP_PORTS=3000
 
 # Etapa de build
