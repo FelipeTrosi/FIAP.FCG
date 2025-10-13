@@ -3,6 +3,8 @@ using FIAP.FCG.Infrastructure.Repository;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using Serilog.Events;
 using System.Reflection;
 using System.Text.Json.Serialization;
 
@@ -88,7 +90,26 @@ builder.Services.AddServiceDI();
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-}); ;
+});
+
+#region -- Datadog
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Information()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+            .WriteTo.DatadogLogs(
+                apiKey: configuration["Datadog:ApiKey"],
+                source: "dotnet-application",
+                service: "fiap-fcg-api",
+                host: "fiap-fcg-api",
+                tags: new[] { "env:homolog", "version:1.0.0" }
+            )
+            .CreateLogger();
+
+builder.Host.UseSerilog();
+#endregion
+
 
 var app = builder.Build();
 
@@ -112,6 +133,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/health", () => Results.Ok("Ok 200 !"));
+//app.MapGet("/health", () => Results.Ok("Ok 200 !"));
 
 app.Run();
